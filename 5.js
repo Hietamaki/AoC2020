@@ -1,6 +1,7 @@
 const input = document.body.innerText.trim();
 
-//5-1
+// 5-1
+// Encoding is just binary
 const seats = input.split('\n')
     .map(x => parseInt(
         x.replace(/F|L/g, 0)
@@ -8,7 +9,8 @@ const seats = input.split('\n')
 
 const highest = seats.reduce((acc, cur) => acc = cur > acc ? cur : acc);
 
-//5-2
+// 5-2
+// Take complement of reserved seats
 const lowest = seats.reduce((acc, cur) => acc = cur < acc ? cur : acc);
 
 Array.from({ length: highest - lowest + 1}, (_, i) => lowest + i)
